@@ -1,0 +1,22 @@
+# Java class files
+*.class
+
+# Intellij
+*.iml
+*/*.iml
+
+#some local files
+*/.settings/
+*/.DS_Store
+.DS_Store
+*/.idea/
+.idea/
+gradlew
+gradlew.bat
+unused.txt
+
+#php
+vendor/
+*/vendor/
+/php/myMVC/vendor/
+

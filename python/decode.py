@@ -1,0 +1,3 @@
+str = '501 \xc7\xeb\xb5\xc7\xc2\xbcexmail.qq.com\xd0\xde\xb8\xc4\xc3\xdc\xc2\xeb \r\n'
+b = repr(str)
+print unicode(eval(b),"gbk")
