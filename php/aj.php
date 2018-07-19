@@ -77,3 +77,7 @@ function QuickSort2(array &$arr){
     QSort($arr,$low,$high);
 }
 
+function binSearch($arr, $target){
+
+}
+
