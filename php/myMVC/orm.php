@@ -5,17 +5,21 @@
  * Date: 18/7/18
  * Time: 下午5:17
  */
+
+date_default_timezone_set("Asia/Shanghai");
 use Illuminate\Database\Capsule\Manager as Capsule;
 
-require 'vendor/autoload.php';
+date_default_timezone_get();
+
+require __DIR__.'/vendor/autoload.php';
 
 $capsule = new Capsule;
 
 $capsule->addConnection([
     'driver'    => 'mysql',
-    'host'      => 'localhost',
-    'database'  => 'database',
-    'username'  => 'root',
+    'host'      => '192.168.0.130',
+    'database'  => 'onehome',
+    'username'  => 'username',
     'password'  => 'password',
     'charset'   => 'utf8',
     'collation' => 'utf8_unicode_ci',
