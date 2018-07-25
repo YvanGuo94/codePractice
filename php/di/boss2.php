@@ -6,43 +6,53 @@
  * Time: 下午5:32
  */
 
-class Boos{
+class Boos
+{
 
     //领导依赖员工
     private $staff;
 
     //现在老板只需要接受 hr 招聘就好，将控制权交给 hr
     //以设置方法来实现依赖注入
-    public function setStaff(Standard $staff){
+    public function setStaff(Standard $staff)
+    {
         $this->staff = $staff;
     }
 
-    public function task(){
+    public function task()
+    {
         $this->staff->work();
     }
 }
 
 //招聘所设定的标准
-interface Standard{
+interface Standard
+{
     public function work();
 }
 
 //员工需要依赖的标准
-class StaffA implements Standard{
-    public function work(){
+class StaffA implements Standard
+{
+    public function work()
+    {
         echo '雇员A有能力能够完成老板指定的工作';
     }
 }
 
-class StaffB implements Standard{
-    public function work(){
+class StaffB implements Standard
+{
+    public function work()
+    {
         echo '雇员B有能力能够完成老板指定的工作';
     }
 }
 
 //ioc容器
-class Hr{
-    public function getStagff(){
+class Hr
+{
+    public function getStagff()
+    {
         return new StaffB();
     }
 }

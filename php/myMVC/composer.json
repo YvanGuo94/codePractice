@@ -9,6 +9,7 @@
     "require": {
         "phpmailer/phpmailer": "^6.0",
         "illuminate/events": "^5.2",
-        "illuminate/database": "^5.2"
+        "illuminate/database": "^5.2",
+        "moolex/nsqclient": "^0.1.1"
     }
 }
