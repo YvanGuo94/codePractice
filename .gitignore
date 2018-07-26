@@ -20,3 +20,8 @@ vendor/
 */vendor/
 /php/myMVC/vendor/
 
+#node
+
+node_modules/
+*/node_modules/
+
