@@ -54,3 +54,58 @@ function orderByColumn(array &$arr, $key){
 }
 
 orderByColumn($tagetArr2,'id');
+
+
+$tagetArr = [
+    0 => [
+        'userId' => '11',
+        'other' => 'aaa'
+    ],
+    1 => [
+        'userId' => '11',
+        'other' => 'bbb'
+    ],
+    2 => [
+        'userId' => '33',
+        'other' => 'ccc'
+    ],
+    3 => [
+        'userId' => '44',
+        'other' => 'ccc'
+    ]
+];
+$userId = array_column($tagetArr, 'userId');
+
+$tagetArr2 = [
+    0 => [
+        'userId' => '11',
+        'otherKey' => 2222
+    ],
+    1 => [
+        'userId' => '33',
+        'otherKey' => 2222
+    ],
+    2 => [
+        'userId' => '44',
+        'otherKey' => 3333
+    ]
+];
+
+/*
+     * 按照$tagetArr排序.$tagetArr2与$tagetArr逻辑上为n:1或1:1.$tagetArr2行数小于等于$tagetArr
+     *
+     */
+function myInnerJoin($tagetArr2, $key2, $tagetArr, $key)
+{
+    $reultArr = [];
+    $arr = array_column($tagetArr2, $key2);
+    foreach ($tagetArr as $tagetIndex => $tagetItem) {
+        $orderIndex = array_search($tagetItem[$key], $arr);
+        if ($orderIndex !== false) {
+            $reultArr[] = array_merge($tagetArr[$tagetIndex], $tagetArr2[$orderIndex]);
+        }
+    }
+    return $reultArr;
+}
+
+print_r(myInnerJoin($tagetArr2, 'userId', $tagetArr, 'userId'));

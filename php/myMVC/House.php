@@ -8,24 +8,42 @@
 
 require "orm.php";
 
+
 class House extends Illuminate\Database\Eloquent\Model {
     protected $table = 'house';
     const CREATED_AT = 'createdAt';
     const UPDATED_AT = 'updatedAt';
     protected $dateFormat = 'U';
 
+    public function belongsToUser()
+
+    {
+        return $this->belongsTo('User', 'userId', 'id');
+    }
+
 }
 
-$houses = House::where('id', '=', 23054929)->get();
+class User extends Illuminate\Database\Eloquent\Model
+{
+    protected $table = 'user';
+    const CREATED_AT = 'createdAt';
+    const UPDATED_AT = 'updatedAt';
+    protected $dateFormat = 'U';
 
-//print_r($houses);
-
-$h1 = new House();
-
-$h1->title='addfromEloquent';
-
-if($h1->save()){
-    echo $h1->id;
-}else{
-    echo '添加失败！';
 }
+
+$myhouse = House::where('pricePerNight', '>', 100)
+    ->limit(2)
+    ->with('belongsToUser')
+    ->get();
+var_dump($myhouse);
+
+//$h1 = new House();
+//
+//$h1->title='addfromEloquent';
+//
+//if($h1->save()){
+//    echo $h1->id;
+//}else{
+//    echo '添加失败！';
+//}

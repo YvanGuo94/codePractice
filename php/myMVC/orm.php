@@ -7,11 +7,11 @@
  */
 
 date_default_timezone_set("Asia/Shanghai");
-use Illuminate\Database\Capsule\Manager as Capsule;
-
-date_default_timezone_get();
 
 require __DIR__.'/vendor/autoload.php';
+
+use Illuminate\Database\Capsule\Manager as Capsule;
+
 
 $capsule = new Capsule;
 
@@ -36,3 +36,37 @@ $capsule->setAsGlobal();
 
 // Setup the Eloquent ORM... (optional; unless you've used setEventDispatcher())
 $capsule->bootEloquent();
+
+class House extends Illuminate\Database\Eloquent\Model {
+    protected $table = 'house';
+    const CREATED_AT = 'createdAt';
+    const UPDATED_AT = 'updatedAt';
+    protected $dateFormat = 'U';
+
+    public function belongsToUser()
+
+    {
+        return $this->belongsTo('User', 'userId', 'id');
+    }
+
+}
+
+class User extends Illuminate\Database\Eloquent\Model
+{
+    protected $table = 'user';
+    const CREATED_AT = 'createdAt';
+    const UPDATED_AT = 'updatedAt';
+    protected $dateFormat = 'U';
+
+}
+$capsule::connection()->enableQueryLog();
+
+
+$myhouse = House::where('id','=' ,20150867)
+    ->with('belongsToUser')
+    ->limit(1)
+    ->get();
+var_dump($myhouse);
+$log = $capsule::getQueryLog();
+
+var_dump($log);
