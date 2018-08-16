@@ -8,6 +8,8 @@
 
 require "orm.php";
 
+var_dump($capsule);
+
 
 class House extends Illuminate\Database\Eloquent\Model {
     protected $table = 'house';
