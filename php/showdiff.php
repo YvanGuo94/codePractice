@@ -20,7 +20,7 @@ $stmt = $connection->prepare($sql);
 $stmt->execute();
 
 $rows1 = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-$rows1 = array_column($rows1,'COLUMN_NAME');
+$rows1 = array_column($rows1, 'COLUMN_NAME');
 
 $sql = "select COLUMN_NAME from INFORMATION_SCHEMA.Columns where table_name='house' and table_schema='onehome'";
 
@@ -28,10 +28,10 @@ $stmt = $connection->prepare($sql);
 $stmt->execute();
 
 $rows2 = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-$rows2 = array_column($rows2,'COLUMN_NAME');
+$rows2 = array_column($rows2, 'COLUMN_NAME');
 
-$diff12 = array_diff($rows1,$rows2);
-$diff21 = array_diff($rows2,$rows1);
+$diff12 = array_diff($rows1, $rows2);
+$diff21 = array_diff($rows2, $rows1);
 
 print_r($diff12);
 print_r($diff21);
@@ -46,7 +46,6 @@ try {
     $connection->exec("");
     $connection->exec("");
     $connection->commit();
-
 } catch (Exception $e) {
     $connection->rollBack();
     echo "Failed: " . $e->getMessage();

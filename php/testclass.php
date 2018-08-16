@@ -6,13 +6,16 @@
  * Time: 上午11:16
  */
 
-class Foo{
+class Foo
+{
     protected $b = 2;
     public $a = 44;
     public static $c = 1;
 }
-class Foo2 extends Foo{
-    public function cc(){
+class Foo2 extends Foo
+{
+    public function cc()
+    {
         echo self::$c;
         echo $this->b;
     }

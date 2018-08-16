@@ -31,9 +31,9 @@ class ConnManager
         $key = $this->config[$module]['host'] . $this->config[$module]['dbname'];
         if (!$this->connections[$key]) {
             $this->connections[$key] = $this->createConnection(
-                $this->config[$module]['host'], 
-                $this->config[$module]['dbname'], 
-                $this->config[$module]['user'], 
+                $this->config[$module]['host'],
+                $this->config[$module]['dbname'],
+                $this->config[$module]['user'],
                 $this->config[$module]['password']
             );
         }

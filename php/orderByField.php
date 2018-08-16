@@ -22,7 +22,9 @@ $tagetArr = [
     ]
 ];
 
-foreach ($tagetArr as $i => $v) $k[] = array_search($v['id'], $order_by_field);
+foreach ($tagetArr as $i => $v) {
+    $k[] = array_search($v['id'], $order_by_field);
+}
 array_multisort($k, $tagetArr);
 //print_r($tagetArr);
 
@@ -49,11 +51,12 @@ $tagetArr2 = [
     ]
 ];
 
-function orderByColumn(array &$arr, $key){
-    array_multisort(array_column($arr,$key), $arr);
+function orderByColumn(array &$arr, $key)
+{
+    array_multisort(array_column($arr, $key), $arr);
 }
 
-orderByColumn($tagetArr2,'id');
+orderByColumn($tagetArr2, 'id');
 
 
 $tagetArr = [

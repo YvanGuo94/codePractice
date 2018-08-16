@@ -9,7 +9,7 @@
 function getLocalIP()
 {
     $preg = "/\A((([0-9]?[0-9])|(1[0-9]{2})|(2[0-4][0-9])|(25[0-5]))\.){3}(([0-9]?[0-9])|(1[0-9]{2})|(2[0-4][0-9])|(25[0-5]))\Z/";
-//获取操作系统为win2000/xp、win7的本机IP真实地址
+    //获取操作系统为win2000/xp、win7的本机IP真实地址
 //    exec("ipconfig", $out, $stats);
 //    if (!empty($out)) {
 //        foreach ($out AS $row) {
@@ -21,7 +21,7 @@ function getLocalIP()
 //            }
 //        }
 //    }
-//获取操作系统为linux类型的本机IP真实地址
+    //获取操作系统为linux类型的本机IP真实地址
     $match = '';
     exec("ifconfig", $result, $stats);
 //    var_dump($stats);

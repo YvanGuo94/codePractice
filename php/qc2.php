@@ -11,7 +11,7 @@ require __DIR__."/phpqrcode/qrlib.php";
 $t1 = microtime(true);
 
 
-for ($i=0;$i<=1000;$i++){
+for ($i=0;$i<=1000;$i++) {
     ob_start();
     QRcode::png("https://www.onehome.me/");
     ob_end_clean();
@@ -20,4 +20,4 @@ for ($i=0;$i<=1000;$i++){
 $t2 = microtime(true);
 
 header("Content-type: application/json; charset=utf-8");
-echo '耗时'.round($t2-$t1,3).'秒';
+echo '耗时'.round($t2-$t1, 3).'秒';

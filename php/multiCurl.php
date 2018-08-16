@@ -38,4 +38,4 @@ echo "$response_1 $response_2"; // output results
 
 
 header("Content-type: application/json; charset=utf-8");
-echo '耗时'.round($t2-$t1,3).'秒';
+echo '耗时'.round($t2-$t1, 3).'秒';

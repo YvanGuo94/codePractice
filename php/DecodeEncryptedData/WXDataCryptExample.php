@@ -30,5 +30,5 @@ $encryptedData="CiyLU1Aw2KjvrjMdj8YKliAjtP4gsMZM
 $iv = 'r7BXXKkLb8qrSNn05n0qiA==';
 
 $pc = new DecodeEncryptedData_WXBizDataCrypt($appid, $sessionKey);
-$errCode = $pc->decryptData($encryptedData, $iv, $data );
+$errCode = $pc->decryptData($encryptedData, $iv, $data);
 echo $errCode;

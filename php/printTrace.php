@@ -7,25 +7,26 @@
  */
 
 
-function aa($a){
-
+function aa($a)
+{
     $a++;
     bb(123);
 }
 
-function bb($b){
+function bb($b)
+{
     $cc = new cc();
     $cc->dd();
 }
 
-class cc{
+class cc
+{
     private $a = 1;
 
-    function dd(){
+    public function dd()
+    {
         print_r(debug_backtrace());
     }
 }
 
 aa(111);
-
-

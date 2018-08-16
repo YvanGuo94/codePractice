@@ -9,7 +9,7 @@
 header('X-Accel-Buffering: no');
 
 
-for($i=0;$i<=10;$i++){
+for ($i=0;$i<=10;$i++) {
     echo $i;
     ob_flush();
     flush();

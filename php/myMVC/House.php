@@ -11,18 +11,17 @@ require "orm.php";
 var_dump($capsule);
 
 
-class House extends Illuminate\Database\Eloquent\Model {
+class House extends Illuminate\Database\Eloquent\Model
+{
     protected $table = 'house';
     const CREATED_AT = 'createdAt';
     const UPDATED_AT = 'updatedAt';
     protected $dateFormat = 'U';
 
     public function belongsToUser()
-
     {
         return $this->belongsTo('User', 'userId', 'id');
     }
-
 }
 
 class User extends Illuminate\Database\Eloquent\Model
@@ -31,7 +30,6 @@ class User extends Illuminate\Database\Eloquent\Model
     const CREATED_AT = 'createdAt';
     const UPDATED_AT = 'updatedAt';
     protected $dateFormat = 'U';
-
 }
 
 $myhouse = House::where('pricePerNight', '>', 100)

@@ -18,7 +18,8 @@ class VarTest
     public $arr = [1, 2, 3, 4, 5];
     const arr = 1;
 
-    function echoVar(){
+    public function echoVar()
+    {
         var_dump(self::constArr);
         var_dump(self::$psArr);
         var_dump($this->constArr);
@@ -28,11 +29,11 @@ class VarTest
         var_dump(self::arr);
     }
 
-    public static function psfunc(){
+    public static function psfunc()
+    {
         var_dump(self::constArr);
 //        var_dump($this->arr); //Fatal error: Using $this when not in object context   $this is not accessible in static context
     }
-
 }
 
 var_dump(VarTest::constArr);

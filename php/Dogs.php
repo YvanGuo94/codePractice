@@ -8,19 +8,21 @@
 require "FurryPets.php";
 class Dogs extends FurryPets
 {
-    function __construct()
+    public function __construct()
     {
         echo "Dogs" . $this->fourlegs();
         echo $this->makesSound("汪汪");
         echo $this->guardsHouse();
     }
-    private function guardsHouse(){
+    private function guardsHouse()
+    {
         return "Grrrrr";
     }
 }
 
-class Client{
-    function __construct()
+class Client
+{
+    public function __construct()
     {
         $dog = new Dogs();
     }
